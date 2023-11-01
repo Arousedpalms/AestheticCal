@@ -1,17 +1,52 @@
 /* styles.css */
-
 body {
-    font-family: 'Times New Roman', serif;  /* A serif font */
-    background-color: #e0d6c5;  /* Earthy brown background color */
+    font-family: Arial, sans-serif;
+    margin: 50px;
+    background-color: #f7f7f7;
 }
 
 .calendar {
-    width: 80%;
-    margin: 20px auto;
-    background-color: rgba(255, 255, 255, 0.5);  /* Slightly transparent background for calendar */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* subtle shadow */
+    max-width: 320px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-/* You can add more styles for the days, dates, and highlighted date */
+.month {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #007BFF;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.prev, .next {
+    cursor: pointer;
+}
+
+.weekdays, .days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdays div, .days div {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.days div {
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+}
+
+.days div:nth-child(7n) {
+    border-right: none;
+}
+
+.days div:last-child,
+.days div:nth-last-child(-n+7) {
+    border-bottom: none;
+}
