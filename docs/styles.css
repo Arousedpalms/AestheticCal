@@ -1,14 +1,14 @@
 /* styles.css */
 body {
-    font-family: Arial, sans-serif;
-    margin: 50px;
-    background-color: #f7f7f7;
+    font-family: 'Georgia', serif; /* Classic font */
+    background-color: #f7f7f7; 
 }
 
 .calendar {
     max-width: 320px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #e6e0d4; /* Light brown-ish background inspired by the painting */
+    border: 2px solid #8b7868; /* A darker border color */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -18,13 +18,9 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 16px;
-    background-color: #007BFF;
+    background-color: #8b7868; /* Earthy brown from the tree trunks */
     color: #ffffff;
     font-size: 18px;
-}
-
-.prev, .next {
-    cursor: pointer;
 }
 
 .weekdays, .days {
@@ -35,11 +31,17 @@ body {
 .weekdays div, .days div {
     padding: 12px 0;
     text-align: center;
+    color: #535353; /* Muted text color */
 }
 
 .days div {
-    border-bottom: 1px solid #f0f0f0;
-    border-right: 1px solid #f0f0f0;
+    border-bottom: 1px solid #c3b9a8; /* Muted border color */
+    border-right: 1px solid #c3b9a8;
+    background-color: #f0ebe1; /* Muted background color for each day */
+}
+
+.days div:hover {
+    background-color: #d6cfbf; /* Slightly darker background on hover */
 }
 
 .days div:nth-child(7n) {
@@ -49,4 +51,5 @@ body {
 .days div:last-child,
 .days div:nth-last-child(-n+7) {
     border-bottom: none;
-}
+} 
+
