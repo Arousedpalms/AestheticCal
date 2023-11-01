@@ -10,5 +10,70 @@
     <div class="calendar">
         <!-- Add Calendar days and dates here -->
     </div>
+<div class="calendar">
+    <div class="month">
+        <span class="prev">&#10094;</span>
+        <span class="next">&#10095;</span>
+        <span class="month-year" id="label">November 2023</span>
+    </div>
+    <div class="weekdays">
+        <!-- Weekdays go here: Sun, Mon, ... -->
+    </div>
+    <div class="days">
+        <!-- Days go here: 1, 2, 3, ... -->
+    </div>
+</div>
+    
+<script>
+    let currentMonth = new Date().getMonth();
+    let currentYear = new Date().getFullYear();
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+    document.querySelector(".prev").addEventListener("click", () => changeMonth(-1));
+    document.querySelector(".next").addEventListener("click", () => changeMonth(1));
+
+    function daysInMonth(month, year) {
+        return new Date(year, month + 1, 0).getDate();
+    }
+
+    function changeMonth(direction) {
+        currentMonth += direction;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        } else if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        showCalendar(currentMonth, currentYear);
+    }
+
+    function showCalendar(month, year) {
+        const firstDay = (new Date(year, month)).getDay();
+
+        let daysHTML = "";
+        let weekdaysHTML = weekdays.map(day => `<div>${day}</div>`).join("");
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < firstDay || date > daysInMonth(month, year)) {
+                    daysHTML += "<div></div>";  // empty cell
+                } else {
+                    daysHTML += `<div>${date}</div>`;
+                    date++;
+                }
+            }
+        }
+
+        document.querySelector(".weekdays").innerHTML = weekdaysHTML;
+        document.querySelector(".days").innerHTML = daysHTML;
+        document.querySelector("#label").textContent = `${monthNames[month]} ${year}`;
+    }
+
+    showCalendar(currentMonth, currentYear);
+</script>
+
 </body>
 </html>
