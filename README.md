@@ -1,0 +1,2 @@
+# AestheticCal
+theme: minima
