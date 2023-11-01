@@ -7,22 +7,21 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Begin Calendar Structure -->
     <div class="calendar">
-        <!-- Add Calendar days and dates here -->
+        <div class="month">
+            <span class="prev">&#10094;</span>
+            <span class="next">&#10095;</span>
+            <span class="month-year" id="label">November 2023</span>
+        </div>
+        <div class="weekdays">
+            <!-- Weekdays go here: Sun, Mon, ... -->
+        </div>
+        <div class="days">
+            <!-- Days go here: 1, 2, 3, ... -->
+        </div>
     </div>
-<div class="calendar">
-    <div class="month">
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
-        <span class="month-year" id="label">November 2023</span>
-    </div>
-    <div class="weekdays">
-        <!-- Weekdays go here: Sun, Mon, ... -->
-    </div>
-    <div class="days">
-        <!-- Days go here: 1, 2, 3, ... -->
-    </div>
-</div>
+    <!-- End Calendar Structure -->
     
 <script>
     let currentMonth = new Date().getMonth();
