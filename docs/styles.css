@@ -1,0 +1,17 @@
+/* styles.css */
+
+body {
+    font-family: 'Times New Roman', serif;  /* A serif font */
+    background-color: #e0d6c5;  /* Earthy brown background color */
+}
+
+.calendar {
+    width: 80%;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.5);  /* Slightly transparent background for calendar */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  /* subtle shadow */
+}
+
+/* You can add more styles for the days, dates, and highlighted date */
