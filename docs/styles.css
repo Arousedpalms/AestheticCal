@@ -55,7 +55,8 @@ body {
 
 /* New styles for the current day highlight */
 .current-day {
-    background-color: #f2a365; /* Or any color of your choice */
-    border-radius: 50%; /* To make it circular */
-    color: white; /* Text color */
+    background-color: #FFD700; /* Gold color for example */
+    color: #000; /* Black text color */
+    border-radius: 50%; /* This will make the day appear as a circle */
 }
+
